@@ -1,0 +1,44 @@
+ print_endline "Hello, OCaml!!";;
+ "あ";;
+ 3;;
+ 3 + 4 * 2;;
+(3 + 4) * 2;;
+2- 3;;
+7 / 2;;
+7 - 3 * 4;;
+7 / 2 * 2;;
+7 * 2 / 2;;
+2.718;;
+(3.0 +. 5.0) *. 8.0 /. 3.0;;
+(3. +. 5.) *. 8. /. 3.;;
+1.41421356 ** 2.;;
+2. *. 3.14 *. 10.;;
+infinity;;
+infinity +. 3.0;;
+infinity ** 2.;;
+infinity /. infinity;;
+neg_infinity;;
+"Yokohama";;
+"Nagasaki";;
+"Yokohama" ^ "Station";;
+"";;
+true;;
+false;;
+true && true;;
+true && false;;
+true > false;;
+true < false;;
+2 > 3;;
+not (3.1415 ** 2. < 10.);;
+8 mod 3 = 2;;
+(3 + 4 + 5) = 4 * 3;;
+
+let pi = 3.1415;;
+2.0 *. pi;;
+let salary = 850;;
+(25 * salary) + (28 * salary) + (31 * salary);;
+
+let e = 2.718;;
+
+let f x = x *. 3.;;
+f 2.;;
