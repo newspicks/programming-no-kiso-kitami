@@ -4,6 +4,7 @@ let bmi shincho taiju = taiju /. (shincho ** 2.0);;
 bmi 1.7 70.0
 
 (* BMIから体系を判定する *)
+(* himan : float -> float -> string *)
 let himan shincho taiju = if(bmi shincho taiju) < 18.5 then "やせ"
   else if (18.5 <= (bmi shincho taiju) && (bmi shincho taiju) < 25.0) then "標準"
   else if (25.0 <= (bmi shincho taiju) && (bmi shincho taiju) < 30.0) then "肥満"
