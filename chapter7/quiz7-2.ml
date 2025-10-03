@@ -3,5 +3,5 @@
 let seiseki pair  = match pair with
   (name, score) -> name ^ "さんの成績は" ^ string_of_int score ^ "点です";;
 
-seiseki ("山田", 85);;
-seiseki ("田中", 60);;
+let test1 = seiseki ("山田", 85) = "山田さんの成績は85点です";;
+let test2 = seiseki ("田中", 60) = "田中さんの成績は60点です";;
