@@ -2,7 +2,7 @@ match (3, 5) with
 | (a, b) -> a + b
 
 let add pair = match pair with
-  (a, b) -> a + b
+  (a, b) -> a + b;;
 
 add(3, 5)
 
