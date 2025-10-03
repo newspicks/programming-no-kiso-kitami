@@ -5,4 +5,6 @@ let goukei_to_heikin kokugo suugaku eigo rika shakai =
   let heikin = goukei / 5 in
   goukei, heikin;;
 
-goukei_to_heikin 80 70 90 85 75
+let test1 = goukei_to_heikin 80 70 90 85 75 = (400, 80)
+
+let test2 = goukei_to_heikin 60 65 70 75 80 = (350, 70)
