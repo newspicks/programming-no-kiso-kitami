@@ -4,6 +4,6 @@
 (* hyoji: ekimei_t -> string *)
 let hyoji ekimei = match ekimei with
 { kana = a; shozoku = s; kanji = k; romaji = _; } ->
-  s ^ "," ^ k ^ "(" ^ a ^ ")";;
+  s ^ ", " ^ k ^ "(" ^ a ^ ")";;
 
-hyoji { kanji = "池袋"; kana = "いけぶくろ"; romaji = "ikebukuro"; shozoku = "JR山手線"};;
+let test1 = hyoji { kanji = "池袋"; kana = "いけぶくろ"; romaji = "ikebukuro"; shozoku = "JR山手線"} = "JR山手線, 池袋(いけぶくろ)"

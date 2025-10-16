@@ -7,6 +7,14 @@ type book_t = {
   isbn: string;      (* ISBN *)
 }
 
+type book_t_neo = { 
+  title: string;     (* 本のタイトル *)
+  author: string;    (* 著者名 *)
+  publisher: string; (* 出版社名 *)
+  price: int;        (* 価格 *)
+  isbn: string;      (* ISBN *)
+}
+
 
 let wagahaiwa_neko_dearu = { 
   title = "吾輩は猫である"; 
@@ -24,10 +32,15 @@ let yukiguni = {
   isbn = "4-10-100101-2" 
 };;
 
-let bocchan = { 
+let bocchan : book_t = { 
   title = "坊っちゃん"; 
   author = "夏目漱石"; 
   publisher = "岩波書店"; 
   price = 300; 
   isbn = "4-00-310101-2" 
 };;
+
+let title (book : book_t)  = 
+  book.title;;
+
+title bocchan;;

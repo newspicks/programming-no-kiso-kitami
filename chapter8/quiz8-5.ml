@@ -5,7 +5,3 @@ type ekimei_t = {
   romaji : string; (* ローマ字 *)
   shozoku : string; (* 所属路線名 *)
 }
-
-
-
-hyoji { kanji = "池袋"; kana = "いけぶくろ"; romaji = "ikebukuro"; shozoku = "JR山手線"};
