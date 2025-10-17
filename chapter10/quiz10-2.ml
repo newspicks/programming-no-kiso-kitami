@@ -9,3 +9,15 @@ let rec ins_sort lst = match lst with
 let test4 = ins_sort [] = [];;
 let test5 = ins_sort [3] = [3];;
 let test6 = ins_sort [4;2;5;1;3] = [1;2;3;4;5];;
+
+(*
+  ins_sort [4;2;5;1;3] 
+  insert ( insert ( ins_sort [5;1;3]) 2 ) 4
+  insert (insert ( insert ( ins_sort [1;3]) 5 ) 2 ) 4
+  insert (insert (insert (insert (ins_sort [3]) 1) 5) 2) 4)
+
+*)
+
+
+
+let test7 = ins_sort [5;1;3] = [1;3;5];;
