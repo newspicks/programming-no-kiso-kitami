@@ -1,6 +1,6 @@
 #use "./quiz10-1.ml";;
 
-(* 目的: 整数を配列を受け取り、それを照準に整列したリストを返す *)
+(* 目的: 整数を配列を受け取り、それを昇順に整列したリストを返す *)
 (* insert : int list -> int -> int list *)
 let rec ins_sort lst = match lst with
     [] -> []
