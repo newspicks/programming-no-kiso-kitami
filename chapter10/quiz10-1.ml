@@ -1,4 +1,3 @@
-
 (* 目的: 整数 x を昇順に保つようにリスト lst に挿入する *)
 (* insert : int -> int list -> int list *)
 let rec insert lst x = match lst with
