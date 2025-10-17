@@ -21,9 +21,9 @@ let rec count_A lst = match lst with
         if s = "A" then 1 + count_A rest
                    else count_A rest;;
 
-let test1 = count_A [] = 0;;
-let test2 = count_A [{ namae = "山田"; tensuu = 80; seiseki = "B" }] = 0;;
-let test3 = count_A [{ namae = "山田"; tensuu = 90; seiseki = "A" }] = 1;;
+let test1 = count_A [] = 0
+let test2 = count_A [{ namae = "山田"; tensuu = 80; seiseki = "B" }] = 0
+let test3 = count_A [{ namae = "山田"; tensuu = 90; seiseki = "A" }] = 1
 let test4 = count_A [{ namae = "山田"; tensuu = 90; seiseki = "A" };
                      { namae = "佐藤"; tensuu = 70; seiseki = "C" };
-                     { namae = "鈴木"; tensuu = 85; seiseki = "A" }] = 2;;
+                     { namae = "鈴木"; tensuu = 85; seiseki = "A" }] = 2

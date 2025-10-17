@@ -2,10 +2,22 @@
 (* concat : string list -> string *)
 let rec concat lst = match lst with
     [] -> ""
-    | first :: rest -> first ^ concat rest;;
+    | first :: rest -> first ^ concat rest
 
 
-let test1 = concat [] = "";;
-let test2 = concat ["春"] = "春";;
-let test3 = concat ["春"; "夏"] = "春夏";;
-let test4 = concat ["春"; "夏"; "秋"; "冬"] = "春夏秋冬";;
+let test1 = concat [] = ""
+let test2 = concat ["春"] = "春"
+let test3 = concat ["春"; "夏"] = "春夏"
+let test4 = concat ["春"; "夏"; "秋"; "冬"] = "春夏秋冬"
+
+(* C言語はじめなぜ他の言語ではforループが発明/利用されたのかが気になる *)
+(* アセンブラにはLOOP処理がない jump命令 *)
+(* forループは制限されたjump命令 *)
+
+(* 関数型言語は理論より *)
+(* ラムダ計算:チューリングマシン(抽象化されたコンピュータ)と等価な計算モデル *)
+(* 関数ありき これがあればすべての計算ができるはず 表現力は同じ *)
+(* ラムダ記法だけでプログラミングできるはずじゃん→lispの誕生 *)
+(* →現代的なコンパイラ技術の発展 *)
+
+(* loop や 再帰を使う時、データ構造が理解できていない *)
