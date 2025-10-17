@@ -16,7 +16,7 @@ let rec person_insert lst x = match lst with
 (* person_sort : person_t list -> person_t list *)
 let rec person_sort lst = match lst with
     [] -> []
-  | first :: rest -> insert (person_sort rest) first
+  | first :: rest -> person_insert (person_sort rest) first
 
 
 
