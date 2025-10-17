@@ -11,3 +11,16 @@ let rec insert lst x = match lst with
 let test1 = insert [] 2 = [2];;
 let test2 = insert [1;3;4] 2 = [1;2;3;4];;
 let test3 = insert [1;3;4;7;8;] 5 = [1;3;4;5;7;8];;
+
+(*
+  insert [1;3;4;7;8;] 5
+
+  1st loop
+        1 :: insert [3;4;7;8;] 5
+  2nd loop
+        1 :: (3 :: insert [4;7;8;] 5)
+  3rd loop
+        1 :: (3 :: (4 :: insert [7;8;] 5)
+  4th loop
+        1 :: (3 :: (4 :: (5 :: [7;8;])))
+*)
