@@ -12,13 +12,14 @@ let ekimei_list = [
 
 (* 目的：昇順に並んでいる lst の正しい位置に ekimei を挿入する *) 
 (* ekimei_insert : ekimei_t list -> ekimei_t -> ekimei_t list *) 
-let rec ekimei_insert lst ekimei0 = match lst with 
-    [] -> [ekimei0] 
-  | ({kanji = k; kana = a; romaji = r; shozoku = s} as ekimei) :: rest -> 
-      match ekimei0 with {kanji = k0; kana = a0; romaji = r0; shozoku = s0} -> 
-	if a = a0 then ekimei_insert rest ekimei0 
-	else if a < a0 then ekimei :: ekimei_insert rest ekimei0 
-	else ekimei0 :: lst 
+let rec ekimei_insert lst ekimei = match lst with 
+    [] -> [ekimei] 
+  | ({kanji = k; kana = a; romaji = r; shozoku = s} as ekimei_first) :: rest -> 
+      match ekimei_first with {kanji = kf; kana = af; romaji = rf; shozoku = sf} -> 
+       (*かなが同じなら除去*)
+	      if a = af then ekimei_insert rest ekimei_first 
+	      else if a < af then ekimei :: ekimei_insert rest ekimei_first 
+	      else ekimei_first :: lst 
 
 (* 目的：ekimei list をひらがなの順に整列しながら駅の重複を取り除く *) 
 (* seiretsu : ekimei_t list -> ekimei_t list *) 
