@@ -6,17 +6,6 @@ type ekimei_t = {
   shozoku : string; (* 所属路線名 *)
 }
 
-
-(* 目的：昇順に並んでいる lst の正しい位置に ekimei を挿入する *) 
-(* ekimei_insert : ekimei_t list -> ekimei_t -> ekimei_t list *) 
-(*let rec ekimei_insert lst ekimei = match lst with 
-    [] -> [ekimei] 
-  | ({kanji = k; kana = a; romaji = r; shozoku = s} as ekimei_first) :: rest -> 
-      match ekimei_first with {kanji = kf; kana = af; romaji = rf; shozoku = sf} -> 
-	      if a = af then ekimei_insert rest ekimei_first 
-	      else if a < af then ekimei :: ekimei_insert rest ekimei_first 
-	      else ekimei_first :: lst*)
-
 (* 目的：昇順に並んでいる lst の正しい位置に ekimei を挿入する *) 
 (* ekimei_insert : ekimei_t list -> ekimei_t -> ekimei_t list *) 
 let rec ekimei_insert lst ekimei = match lst with 
