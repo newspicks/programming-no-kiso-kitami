@@ -7,7 +7,6 @@ type person_t =  {
   blood_type: string; (* 血液型 *)
 }
 
-
 let person1 = {
   name = "YamadaTaro";
   height = 170.0;

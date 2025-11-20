@@ -1,5 +1,11 @@
 #use "../metro_data/metro_data.ml"
 
+type eki_t = {
+  namae: string;
+  saitan_kyori: float;
+  temae_list: string list;
+}
+
 (* 目的:漢字の駅名とekikan_tのリストを受け取り、駅間の距離を返す *)
 (* get_ekikan_kyori: string -> string -> ekikan_t list -> float *)
 let rec get_ekikan_kyori eki1 eki2 lst = match lst with
