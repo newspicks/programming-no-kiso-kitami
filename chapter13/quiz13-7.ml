@@ -1,13 +1,10 @@
 #use "../metro_data/metro_data.ml"
 #use "./quiz13-6.ml"
 
-(* 駅の例 *) 
 let ikebukuro = {namae="池袋"; saitan_kyori = infinity; temae_list = []} 
 let otemachi = {namae="大手町"; saitan_kyori = 0.8; temae_list = ["大手町"; "日本橋"]} 
 let myogadani = {namae="茗荷谷"; saitan_kyori = 0.; temae_list = ["茗荷谷"]} 
 let korakuen = {namae="後楽園"; saitan_kyori = infinity; temae_list = []} 
- 
-(* 駅リストの例 *) 
 let stations = [ikebukuro; otemachi; myogadani; korakuen] 
 
 (* 目的:直前に確定した駅 p と、未確定の駅のリスト v を受け取り、必要な更新処理を行った後の未確定の駅のリストを返す *)
