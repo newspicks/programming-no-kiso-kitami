@@ -42,12 +42,18 @@ let person4 = {
   blood_type = "AB";
 } 
 
+
+let get_person_namae p = match p with 
+  {name = n;} -> n
+
+let rec map f lst = match lst with
+  [] -> []
+  | first :: rest -> f first :: map f rest
+
 (* 目的:人のリストを受け取り、その名前のリストを返す *)
 (* person_namae : person_t list -> string list *)
-let rec person_namae lst = match lst with
-    [] -> []
-  | {name = n} :: rest -> n :: person_namae rest 
-
+let person_namae lst =
+   map get_person_namae lst
 
 let test1 = person_namae [] = []
 let test2 = person_namae [person1; person2; person3; person4]

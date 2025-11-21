@@ -53,3 +53,6 @@ let test2 = count_ketsueki [person1; person2; person3; person4] "A" = 1
 let test3 = count_ketsueki [person1; person2; person3; person4] "B" = 1
 let test4 = count_ketsueki [person1; person2; person3; person4] "O" = 1
 let test5 = count_ketsueki [person1; person2; person3; person4] "AB" = 1
+
+let test6 = count_ketsueki [person1; person1; person3; person4] "A" = 2
+let test7 = count_ketsueki [person1; person1; person1; person4] "A" = 3

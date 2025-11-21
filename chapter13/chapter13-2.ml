@@ -34,6 +34,8 @@ let rec map f lst = match lst with
 
 (* 関数がfirst-classである(他の値と同じように自由に扱うことができる *)
 
+(* Javaの関数はfirst-classではない。Kotlinの関数はfirst-class*)
+
 let test5 = map sqrt [4.0; 9.0; 16.0] = [2.0; 3.0; 4.0]
 let test6 = map hyouka [{namae = "asai"; tensuu = 90; seiseki = "";}]
           = [{namae = "asai"; tensuu = 90; seiseki = "A"}]
