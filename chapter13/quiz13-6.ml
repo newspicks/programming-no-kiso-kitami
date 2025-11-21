@@ -23,8 +23,8 @@ let ikebukuro = {namae="池袋"; saitan_kyori = infinity; temae_list = []}
 let otemachi = {namae="大手町"; saitan_kyori = 0.8; temae_list = ["大手町"; "日本橋"]} 
 let myogadani = {namae="茗荷谷"; saitan_kyori = 0.; temae_list = ["茗荷谷"]} 
 
-(* 目的:直前に確定した駅 p と未確定の駅 q を受け取り、ふたつが直接つながっているか調べ、 *)
-(* つながっていない場合は q をそのまま返し、つながっている場合は必要に応じて最短距離とリストを更新して返す *)
+(* 目的:直前に確定した駅pと未確定の駅qを受け取り、ふたつが直接つながっているか調べ、 *)
+(* つながっていない場合はqをそのまま返し、つながっている場合は必要に応じて最短距離とリストを更新して返す *)
 (* koushin1: eki_t -> eki_t -> eki_t *)
 let koushin1 p q = match (p, q) with
   ({namae = pn; saitan_kyori = pk; temae_list = pl},
