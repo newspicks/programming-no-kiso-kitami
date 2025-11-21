@@ -8,12 +8,12 @@ type eki_t = {
 
 (* 目的:漢字の駅名とekikan_tのリストを受け取り、駅間の距離を返す *)
 (* get_ekikan_kyori: string -> string -> ekikan_t list -> float *)
-let rec get_ekikan_kyori eki1 eki2 lst = match lst with
+let rec get_ekikan_kyori station1 station2 lst = match lst with
   [] -> infinity
   | {kiten = ki; shuten = sh; kyori = ky} :: rest ->
-    if (ki = eki1 && sh = eki2) || (ki = eki2 && sh = eki1)
+    if (ki = station1 && sh = station2) || (ki = station2 && sh = station1)
       then ky
-      else get_ekikan_kyori eki1 eki2 rest
+      else get_ekikan_kyori station1 station2 rest
 
 let test1 = get_ekikan_kyori "代々木上原" "表参道" global_ekikan_list = infinity
 let test2 = get_ekikan_kyori "渋谷" "表参道" global_ekikan_list = 1.3
