@@ -10,10 +10,14 @@ let b_student = { namae = "佐藤"; tensuu = 80; seiseki = "B" }
 let c_student = { namae = "鈴木"; tensuu = 70; seiseki = "C" }
 
 
+(* 目的: gakusei_tの成績がAであるかを判定する *)
+(* is_A : gakusei_t -> bool *)
+let is_A gakusei_t = gakusei_t.seiseki = "A"
+
 (* 目的: 学生リスト lst のうち、成績が "A" の学生の数を返す *)
 (* count_A : gakusei_t list -> int *)
 let rec count_A lst =
-  let result = List.filter (fun x -> x.seiseki = "A") lst in
+  let result = List.filter is_A lst in
     List.length(result)
 
 let test1 = count_A [] = 0
