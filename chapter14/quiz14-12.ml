@@ -21,3 +21,7 @@ let make_initial_eki_list lst shiten =
 let test_1 = make_initial_eki_list [] "池袋" = []
 let test_2 = make_initial_eki_list [{namae = "池袋"; saitan_kyori = infinity; temae_list = []}] "池袋" = 
   [{namae = "池袋"; saitan_kyori = 0.0; temae_list = ["池袋"]}]
+let test_3 = make_initial_eki_list[{namae = "池袋"; saitan_kyori = infinity; temae_list = []}] "新宿" =
+[ {namae = "池袋"; saitan_kyori = infinity; temae_list = []}]
+let test_4 = make_initial_eki_list[{namae = "代々木上原"; saitan_kyori = infinity; temae_list = []}] "代々木公園" = 
+  [{namae = "代々木上原"; saitan_kyori = infinity; temae_list = []}]
