@@ -26,9 +26,6 @@ let rec fold_right f lst init = match lst with
   [] -> init
   | first :: rest -> f first (fold_right f rest init)
 
-
-(* let sum lst = fold_right (+) lst 0 *)
-
 (* 目的:m以下の完全数をリストでかえす *)
 (* perfect -> int -> int list *)
 let perfect m = List.filter(fun x -> fold_right (+) (divisor x) 0 - x = x) (enumerate m)
