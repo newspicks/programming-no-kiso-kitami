@@ -18,7 +18,7 @@ let rec get_ekikan_kyori station1 station2 lst = match lst with
 
 (* 目的:直前に確定した駅pと、未確定の駅のリストvを受け取り、必要な更新処理を行った後の未確定の駅のリストを返す *)
 (* koushin: eki_t -> eki_t list -> eki_t list *)
-let koushin p v = 
+(*let koushin p v = 
   List.map (fun q -> match (p, q) with 
 	     ({namae = pn; saitan_kyori = ps; temae_list = pt}, 
 	      {namae = qn; saitan_kyori = qs; temae_list = qt}) -> 
@@ -33,11 +33,24 @@ let koushin p v =
            saitan_kyori = new_distance_candidate;
            temae_list = qn :: pt} 
 		  else q
-  ) v 
+  ) v *)
 
-let ikebukuro = { namae = "池袋"; saitan_kyori = infinity; temae_list = []}
-let shinotsuka = { namae = "新大塚"; saitan_kyori = 1.2; temae_list = ["新大塚";"茗荷谷"] }
-let myogadani = { namae = "茗荷谷"; saitan_kyori = 0.; temae_list = ["茗荷谷"]}
+let koushin p v = 
+  List.map (fun q -> match (p, q) with 
+	     ({namae = pn; saitan_kyori = ps; temae_list = pt}, 
+	      {namae = qn; saitan_kyori = qs; temae_list = qt}) -> 
+		let kyori = get_ekikan_kyori pn qn global_ekikan_list in 
+		if kyori = infinity 
+		then q 
+		else if ps +. kyori < qs 
+		then {namae = qn; saitan_kyori = ps +. kyori; 
+				  temae_list = qn :: pt} 
+		else q) 
+	   v
+
+let ikebukuro = { namae = "池袋"; saitan_kyori = 0.; temae_list = []}
+let shinotsuka = { namae = "新大塚"; saitan_kyori = 1.8; temae_list = ["池袋"] }
+let myogadani = { namae = "茗荷谷"; saitan_kyori = infinity; temae_list = ["新大塚";"池袋"]}
 
 let stations = [ikebukuro;shinotsuka;myogadani;]
 let test1 = koushin ikebukuro [] = []
