@@ -18,23 +18,6 @@ let rec get_ekikan_kyori station1 station2 lst = match lst with
 
 (* 目的:直前に確定した駅pと、未確定の駅のリストvを受け取り、必要な更新処理を行った後の未確定の駅のリストを返す *)
 (* koushin: eki_t -> eki_t list -> eki_t list *)
-(*let koushin p v = 
-  List.map (fun q -> match (p, q) with 
-	     ({namae = pn; saitan_kyori = ps; temae_list = pt}, 
-	      {namae = qn; saitan_kyori = qs; temae_list = qt}) -> 
-		let distance = get_ekikan_kyori pn qn global_ekikan_list in
-    if distance = infinity
-      then q
-    else 
-      let new_distance_candidate = ps +. distance in
-		  if new_distance_candidate < qs 
-		    then 
-          {namae = qn;
-           saitan_kyori = new_distance_candidate;
-           temae_list = qn :: pt} 
-		  else q
-  ) v *)
-
 let koushin p v = 
   List.map (fun q -> match (p, q) with 
 	     ({namae = pn; saitan_kyori = ps; temae_list = pt}, 
